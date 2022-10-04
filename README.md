@@ -2,6 +2,8 @@
 
 Nicholas Josselyn
 
+Contact: njjosselyn [at] wpi [dot] edu
+
 Link to paper: pending ... 
 
 ## Introduction
