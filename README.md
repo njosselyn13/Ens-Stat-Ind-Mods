@@ -76,9 +76,9 @@ Then, set up remote connection (if using a remote compute cluster) by entering y
 A few sample saved models can be found in sample_model_files directory. These model .pth checkpoint files are from the epoch with highest validation accuracy and first cross-validation fold for each experiment identified below. We include these few just as an example of what an output model looks like after training (not guaranteed to be models with best performance results, just examples). 
 
 Included 5 model files (.pth checkpoint files):
-- DANN for DomainNet adaptation task clipart to painting
-- AFN for DomainNet adaptation task clipart to painting
-- MCC for DomainNet adaptation task clipart to painting
+- DANN for DomainNet adaptation task clipart to painting (file too large...)
+- AFN for DomainNet adaptation task clipart to painting (file too large...)
+- MCC for DomainNet adaptation task clipart to painting (file too large...)
 - CDAN for Office31 adaptation task amazon to webcam
 - JAN for Office31 adaptation task amazon to webcam
 
