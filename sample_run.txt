@@ -1,0 +1,16 @@
+source activate /home/username/miniconda3/envs/my_env1
+
+# DomainNet clipart to painting adaptation task, 1st cv-fold, full dataset, all tuned hyperparameters identified (others are code defaults, see args in each .py model file)
+python dann.py ../../../../../../DomainNet_all_correct/DomainNet/cross_val_folds/fold_1/ -d DomainNet -s clipart -t painting -a resnet50 --epochs 30 --lr 0.01 --wd 0.001 --trade-off 1.0 --seed 0 --log logs/dann_subset_exps/full/DomainNet_c2p/fold1
+python jan.py ../../../../../../DomainNet_all_correct/DomainNet/cross_val_folds/fold_1/ -d DomainNet -s clipart -t painting -a resnet50 --epochs 30 --lr 0.01 --wd 0.001 --trade-off 1.0 --seed 0 --log logs/jan_subset_exps/full/DomainNet_c2p/fold1
+python cdan.py ../../../../../../DomainNet_all_correct/DomainNet/cross_val_folds/fold_1/ -d DomainNet -s clipart -t painting -a resnet50 --epochs 30 --lr 0.01 --wd 0.003 --trade-off 2.0 --seed 0 --log logs/cdan_subset_exps/full/DomainNet_c2p/fold1
+python afn.py ../../../../../../DomainNet_all_correct/DomainNet/cross_val_folds/fold_1/ -d DomainNet -s clipart -t painting -a resnet50 --epochs 30 --lr 0.001 --wd 0.001 --trade-off 0.05 --seed 0 --log logs/afn_subset_exps/full/DomainNet_c2p/fold1
+python mcc.py ../../../../../../DomainNet_all_correct/DomainNet/cross_val_folds/fold_1/ -d DomainNet -s clipart -t painting -a resnet50 --epochs 30 --lr 0.1 --wd 0.0001 --trade-off 5.0 --temperature 2.0 --seed 0 --log logs/mcc_subset_exps/full/DomainNet_c2p/fold1
+
+
+# Office31 amazon to webcam adaptation task, 1st cv-fold, all tuned hyperparameters identified (others are code defaults, see args in each .py model file)
+python dann.py ../../../../../../Office31/Original_images/cross_val_folds/fold_1/ -s amazon -t webcam -a resnet50 --epochs 30 --lr 0.001 --wd 0.01 --trade-off 0.5 --seed 0 --log logs/dann_subset_exps/Office31/Office31_a2w/fold1
+python jan.py ../../../../../../Office31/Original_images/cross_val_folds/fold_1/ -s amazon -t webcam -a resnet50 --epochs 30 --lr 0.001 --wd 0.01 --trade-off 0.75 --seed 0 --log logs/jan_subset_exps/Office31/Office31_a2w/fold1
+python cdan.py ../../../../../../Office31/Original_images/cross_val_folds/fold_1/ -s amazon -t webcam -a resnet50 --epochs 30 --lr 0.001 --wd 0.001 --trade-off 1.0 --seed 0 --log logs/cdan_subset_exps/Office31/Office31_a2w/fold1
+python afn.py ../../../../../../Office31/Original_images/cross_val_folds/fold_1/ -s amazon -t webcam -a resnet50 --epochs 30 --lr 0.001 --wd 0.01 --trade-off 0.05 --seed 0 --log logs/afn_subset_exps/Office31/Office31_a2w/fold1
+python mcc.py ../../../../../../Office31/Original_images/cross_val_folds/fold_1/ -s amazon -t webcam -a resnet50 --epochs 30 --lr 0.005 --wd 0.001 --trade-off 0.5 --temperature 2.0 --seed 0 --log logs/mcc_subset_exps/Office31/Office31_a2w/fold1
