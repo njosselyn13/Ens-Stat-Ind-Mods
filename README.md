@@ -70,7 +70,7 @@ For example:
 - local_exp_folder = 'C:\\Users\\yourname\\Desktop\\Results\\exp1\\Office31\\office31_w2w\\' + folder_name + '\\'
 - results_table_csv = 'off31_w2w_' + folder_name
 
-Then, set up remote connection (if using a remote compute cluster) by entering your host, username, and password in each analysis script. Using the paramiko pyton package you will be able to connect directly from the code.
+Then, set up remote connection (if using a remote compute cluster) by entering your host, username, and password in each analysis script. Using the paramiko python package you will be able to connect directly from the code.
 
 
 ## Saved models
