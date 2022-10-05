@@ -84,7 +84,7 @@ Included 5 model files (.pth checkpoint files):
 - CDAN for Office31 adaptation task amazon to webcam
 - JAN for Office31 adaptation task amazon to webcam
 
-See link for all 5 model files (too large for GitHub >100MB): ...
+See link for all 5 model files (too large for GitHub >100MB): https://drive.google.com/drive/folders/1sprX_Dwxl4_zVtX_C6Fbuw-vKNSpDx_M?usp=sharing 
 
 ## Data
 
