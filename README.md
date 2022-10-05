@@ -90,6 +90,8 @@ See link for all 5 model files (too large for GitHub >100MB): https://drive.goog
 
 Access to data splits for reproducibility is pending...
 
+All data is ~217GB
+
 ## Citation
 
 This repository is adapted and modified from the below work. Please cite their work in addition to ours if you use this repository.
