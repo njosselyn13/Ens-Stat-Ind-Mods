@@ -24,7 +24,7 @@ This code was used to produce results for the above paper title. Codes are provi
 In this work, a miniconda environment was setup on a remote compute cluster running Linux. Experiments were run on A100 GPUs using python 3.7.6, CUDA 11.0, torch 1.7.1, and torchvision 0.8.2.
 
 First, download miniconda and move download to compute cluster if applicable: 
-- Download miniconda: https://docs.conda.io/en/latest/miniconda.html](https://docs.conda.io/en/latest/miniconda.html 
+- Download miniconda: https://docs.conda.io/en/latest/miniconda.html
 
 Then, run the following commands in order:
 - conda create -n my_env1
