@@ -92,14 +92,14 @@ All data is ~217GB. Provided here are a link to the original DomainNet data rele
 
 Original DomainNet data release link (cleaned version): http://ai.bu.edu/M3SDA/ 
 
-For Office-31 data, please see the Google drive link here for all raw data (~1GB) and cite the original work: ...
+For Office-31 data, please see the Google drive link here for all raw data (~1GB) and cite the original work: https://drive.google.com/drive/folders/173BSlSeuaLnhi9HIpMU5UfR7e0zAq4fJ?usp=sharing
 
-This download will contain all raw data cross-val folds and test set for you already. 
+This download will contain all the raw data cross-val folds and test set for you already. No need to reconstruct. 
 
 
-To reconstruct the DomainNet datasets, first download the cleaned version of DomainNet data fro mthe above link. Then look at our folder of excel files named "DomainNet_data". In this folder there are 31 excel files. 
+To reconstruct the DomainNet datasets, first download the cleaned version of DomainNet data from the above link. Then look at our folder of excel files named "DomainNet_data". In this folder there are 31 excel files. 
 
-30 of the excel file names follow the structure: DomainNet_"size"_fold_"x"_"split".xlsx 
+30 of the excel file names follow the structure: DomainNet_size_fold_x_split.xlsx 
 Size is either full, subset_50, or subset_20. 
 x is either 1, 2, 3, 4, 5 for each of the 5 folds.
 Split is either train or val.
