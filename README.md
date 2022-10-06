@@ -94,7 +94,7 @@ Original DomainNet data release link (cleaned version): http://ai.bu.edu/M3SDA/
 
 For Office-31 data, please see the Google drive link here for all raw data (~1GB) and cite the original work: ...
 
-Thios download will contain all raw data cross-val folds and test set for you already. 
+This download will contain all raw data cross-val folds and test set for you already. 
 
 
 To reconstruct the DomainNet datasets, first download the cleaned version of DomainNet data fro mthe above link. Then look at our folder of excel files named "DomainNet_data". In this folder there are 31 excel files. 
