@@ -104,8 +104,82 @@ x is either 1, 2, 3, 4, 5 for each of the 5 folds.
 Split is either train or val.
 
 Reconstruct the folder structure of:
-- DomainNet
-  - hi
+- full
+  - fold_1
+    - train
+      - clipart
+      - infograph
+      - painting
+      - quickdraw
+      - real
+      - sketch
+    - val
+      - clipart
+      - infograph
+      - painting
+      - quickdraw
+      - real
+      - sketch
+  - fold_2
+    - train
+      - clipart
+      - infograph
+      - painting
+      - quickdraw
+      - real
+      - sketch
+    - val
+      - clipart
+      - infograph
+      - painting
+      - quickdraw
+      - real
+      - sketch
+  - fold_3
+    - train
+      - clipart
+      - infograph
+      - painting
+      - quickdraw
+      - real
+      - sketch
+    - val
+      - clipart
+      - infograph
+      - painting
+      - quickdraw
+      - real
+      - sketch
+  - fold_4
+    - train
+      - clipart
+      - infograph
+      - painting
+      - quickdraw
+      - real
+      - sketch
+    - val
+      - clipart
+      - infograph
+      - painting
+      - quickdraw
+      - real
+      - sketch
+  - fold_5
+    - train
+      - clipart
+      - infograph
+      - painting
+      - quickdraw
+      - real
+      - sketch
+    - val
+      - clipart
+      - infograph
+      - painting
+      - quickdraw
+      - real
+      - sketch
 
 Describe the excel files/folders....
 
