@@ -96,6 +96,17 @@ Original DomainNet data release link (cleaned version): http://ai.bu.edu/M3SDA/
 
 For Office-31 data, please see the Google drive link here for all raw data (~1GB) and cite the original work: ...
 
+To reconstruct the DomainNet datasets, first download the cleaned version of DomainNet data fro mthe above link. Then look at our folder of excel files named "DomainNet_data". In this folder are 30 excel files. 
+
+Each excel file name follows the structure: DomainNet_size_fold_x_split.xlsx. 
+Size is either full, subset_50, or subset_20. 
+x is either 1, 2, 3, 4, 5 for each of the 5 folds.
+Split is either train or val.
+
+Reconstruct the folder structure of:
+- DomainNet
+  - hi
+
 Describe the excel files/folders....
 
 ## Citation
