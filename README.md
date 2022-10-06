@@ -96,14 +96,19 @@ Original DomainNet data release link (cleaned version): http://ai.bu.edu/M3SDA/
 
 For Office-31 data, please see the Google drive link here for all raw data (~1GB) and cite the original work: ...
 
-To reconstruct the DomainNet datasets, first download the cleaned version of DomainNet data fro mthe above link. Then look at our folder of excel files named "DomainNet_data". In this folder are 30 excel files. 
+Thios download will contain all raw data cross-val folds and test set for you already. 
 
-Each excel file name follows the structure: DomainNet_size_fold_x_split.xlsx. 
+
+To reconstruct the DomainNet datasets, first download the cleaned version of DomainNet data fro mthe above link. Then look at our folder of excel files named "DomainNet_data". In this folder there are 31 excel files. 
+
+30 of the excel file names follow the structure: DomainNet_"size"_fold_"x"_"split".xlsx 
 Size is either full, subset_50, or subset_20. 
 x is either 1, 2, 3, 4, 5 for each of the 5 folds.
 Split is either train or val.
 
-Reconstruct the folder structure of:
+The 31st file is for the TEST set of DomainNet data: DomainNet_test.xlsx
+
+Reconstruct the following folder structure: 
 - full
   - fold_1
     - train
@@ -181,7 +186,21 @@ Reconstruct the folder structure of:
       - real
       - sketch
 
-Describe the excel files/folders....
+Repeat this for not just "full", but also for "subset_50" and "subset_20" and put all 3 of these parent foders into one folder named DomainNet (or whatever you'd like to call it). In each domain folder (clipart, infograph, painting, quickdraw, real, and sketch) there will be 345 folders for each class with each of their respective images in these folders.
+
+In each of the excel files provided, there are 6 sheets corresponding to each of the 6 domains. In each sheet there are 345 columns corresponding to each of the 345 classes. For each class the list of image names are provided. Using the excel file name, sheet names, column names, and image file names you should be able to reconstruct the above folder structures. 
+
+For the DomainNet TEST set, use DomainNet_test.xlsx to reconstruct the following folder structure:
+
+- test
+  - clipart
+  - infograph
+  - painting
+  - quickdraw
+  - real
+  - sketch
+
+Where in each domain folder there will be 345 class folders with respective images in each of these 345 folders. 
 
 ## Citation
 
