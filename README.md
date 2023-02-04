@@ -220,6 +220,7 @@ This repository is adapted and modified from the below work. Please cite their w
 
 Our paper citation:
 
+```latex
 @INPROCEEDINGS{10020767,
   author={Josselyn, Nicholas and Yin, Biao and Zhang, Ziming and Rundensteiner, Elke},
   booktitle={2022 IEEE International Conference on Big Data (Big Data)}, 
@@ -229,7 +230,7 @@ Our paper citation:
   number={},
   pages={5504-5513},
   doi={10.1109/BigData55660.2022.10020767}}
-  
+  ```
 
 Additional applied domain adaptation paper using this repo published in 2022 IEEE ICMLA:
 
