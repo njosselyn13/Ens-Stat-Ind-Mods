@@ -4,7 +4,7 @@ Nicholas Josselyn
 
 Contact: njjosselyn [at] wpi [dot] edu
 
-Link to paper: pending ... 
+Link to paper: https://ieeexplore.ieee.org/abstract/document/10020767 
 
 ## Introduction
 
@@ -215,7 +215,18 @@ This repository is adapted and modified from the below work. Please cite their w
 }
 ```
 
-Our paper citation is pending ... 
+Our paper citation:
+
+@INPROCEEDINGS{10020767,
+  author={Josselyn, Nicholas and Yin, Biao and Zhang, Ziming and Rundensteiner, Elke},
+  booktitle={2022 IEEE International Conference on Big Data (Big Data)}, 
+  title={An Empirical Study of Domain Adaptation: Are We Really Learning Transferable Representations?}, 
+  year={2022},
+  volume={},
+  number={},
+  pages={5504-5513},
+  doi={10.1109/BigData55660.2022.10020767}}
+
 
 
 ## License
