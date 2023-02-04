@@ -205,19 +205,6 @@ Where in each domain folder there will be 345 class folders with respective imag
 
 ## Citation
 
-This repository is adapted and modified from the below work. Please cite their work in addition to ours if you use this repository.
-
-```latex
-@misc{dalib,
-  author = {Junguang Jiang, Baixu Chen, Bo Fu, Mingsheng Long},
-  title = {Transfer-Learning-library},
-  year = {2020},
-  publisher = {GitHub},
-  journal = {GitHub repository},
-  howpublished = {\url{https://github.com/thuml/Transfer-Learning-Library}},
-}
-```
-
 Our paper citation:
 
 ```latex
@@ -237,6 +224,22 @@ Additional applied domain adaptation paper using this repo published in 2022 IEE
 Nicholas Josselyn, Biao Yin, Thomas Considine, John Kelley, Berend Rinderspacher, Robert Jensen, James Snyder, Ziming Zhang, and Elke Rundensteiner. 
 "Transferring indoor corrosion image assessment models to outdoor images via domain adaptation". In 
 21st IEEE International Conference on Machine Learning and Applications (ICMLA), 2022.
+
+BibTex citation pending...
+
+
+This repository is adapted and modified from the below work. Please cite their work in addition to ours if you use this repository.
+
+```latex
+@misc{dalib,
+  author = {Junguang Jiang, Baixu Chen, Bo Fu, Mingsheng Long},
+  title = {Transfer-Learning-library},
+  year = {2020},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/thuml/Transfer-Learning-Library}},
+}
+```
 
 
 
