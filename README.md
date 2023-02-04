@@ -6,6 +6,9 @@ Contact: njjosselyn [at] wpi [dot] edu
 
 Link to paper: https://ieeexplore.ieee.org/abstract/document/10020767 
 
+Nicholas Josselyn, Biao Yin, Ziming Zhang, and Elke Rundensteiner, "An Empirical Study of Domain Adaptation: Are We Really Learning Transferable Representations?",
+2022 IEEE International Conference on Big Data, Special session on Machine Learning on Big Data,2022.
+
 ## Introduction
 
 This code was used to produce results for the above paper title. Codes are provided for reproducibility of results. Included here will be:
@@ -226,6 +229,13 @@ Our paper citation:
   number={},
   pages={5504-5513},
   doi={10.1109/BigData55660.2022.10020767}}
+  
+
+Additional applied domain adaptation paper using this repo published in 2022 IEEE ICMLA:
+
+Nicholas Josselyn, Biao Yin, Thomas Considine, John Kelley, Berend Rinderspacher, Robert Jensen, James Snyder, Ziming Zhang, and Elke Rundensteiner. 
+"Transferring indoor corrosion image assessment models to outdoor images via domain adaptation". In 
+21st IEEE International Conference on Machine Learning and Applications (ICMLA), 2022.
 
 
 
