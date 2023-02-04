@@ -7,7 +7,7 @@ Contact: njjosselyn [at] wpi [dot] edu
 Link to paper: https://ieeexplore.ieee.org/abstract/document/10020767 
 
 Nicholas Josselyn, Biao Yin, Ziming Zhang, and Elke Rundensteiner, "An Empirical Study of Domain Adaptation: Are We Really Learning Transferable Representations?",
-2022 IEEE International Conference on Big Data, Special session on Machine Learning on Big Data, 2022.
+IEEE International Conference on Big Data, Special session on Machine Learning on Big Data, 2022.
 
 ## Introduction
 
