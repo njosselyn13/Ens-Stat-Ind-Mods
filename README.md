@@ -205,7 +205,9 @@ Where in each domain folder there will be 345 class folders with respective imag
 
 ## Citation
 
-Our paper citation:
+Our paper citation for "An Empirical Study of Domain Adaptation: Are We Really Learning Transferable Representations?":
+
+Link to paper: https://ieeexplore.ieee.org/abstract/document/10020767 
 
 ```latex
 @INPROCEEDINGS{10020767,
@@ -219,6 +221,7 @@ Our paper citation:
   doi={10.1109/BigData55660.2022.10020767}}
   ```
 
+
 Additional applied domain adaptation paper using this repo published in 2022 IEEE ICMLA:
 
 Link to ICMLA paper: https://ieeexplore.ieee.org/abstract/document/10069858 
@@ -227,7 +230,18 @@ Nicholas Josselyn, Biao Yin, Thomas Considine, John Kelley, Berend Rinderspacher
 "Transferring indoor corrosion image assessment models to outdoor images via domain adaptation". In 
 21st IEEE International Conference on Machine Learning and Applications (ICMLA), 2022.
 
-BibTex citation pending...
+BibTex citation for our additional ICMLA applied paper:
+
+```latex
+@inproceedings{josselyn2022transferring,
+  title={Transferring Indoor Corrosion Image Assessment Models to Outdoor Images via Domain Adaptation},
+  author={Josselyn, Nicholas and Yin, Biao and Considine, Thomas and Kelley, John and Rinderspacher, Berend and Jensen, Robert and Snyder, James and Zhang, Ziming and Rundensteiner, Elke},
+  booktitle={2022 21st IEEE International Conference on Machine Learning and Applications (ICMLA)},
+  pages={1386--1391},
+  year={2022},
+  organization={IEEE}
+}
+```
 
 
 This repository is adapted and modified from the below work. Please cite their work in addition to ours if you use this repository.
