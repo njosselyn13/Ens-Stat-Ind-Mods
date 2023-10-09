@@ -227,7 +227,9 @@ Additional applied domain adaptation paper using this repo published in 2022 IEE
 Link to ICMLA paper: https://ieeexplore.ieee.org/abstract/document/10069858 
 
 Link to WPI-ARL collaborative webpage: https://arl.wpi.edu/
+
 Find indoor corrosion data here: https://arl.wpi.edu/corrosion_dataset#corrosionDatasetID
+
 Find outdoor corrosion data here: _pending release_
 
 Nicholas Josselyn, Biao Yin, Thomas Considine, John Kelley, Berend Rinderspacher, Robert Jensen, James Snyder, Ziming Zhang, and Elke Rundensteiner. 
