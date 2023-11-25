@@ -1,26 +1,17 @@
-# An Empirical Study of Domain Adaptation: Are We Really Learning Transferable Representations?
-
-Nicholas Josselyn
-
-Contact: njjosselyn [at] wpi [dot] edu
-
-Link to paper: https://ieeexplore.ieee.org/abstract/document/10020767 
-
-Nicholas Josselyn, Biao Yin, Ziming Zhang, and Elke Rundensteiner, "An Empirical Study of Domain Adaptation: Are We Really Learning Transferable Representations?",
-IEEE International Conference on Big Data, Special session on Machine Learning on Big Data, 2022.
+# Ensembles of Statistically Independent Models: An Embarrassingly Simple yet Strong Method for Domain Adaptation
 
 ## Introduction
 
-This code was used to produce results for the above paper title. Codes are provided for reproducibility of results. Included here will be:
+Codes are provided for reproducibility of results. Included here will be:
 - Model codes (DANN, JAN, CDAN, AFN, MCC)
+- Ensemble codes
 - Analysis python scripts to analyze results
 - Samples of saved model files (.pth files)
-- Sample file for running experiments
+- Sample file for running individual DA experiments
 - Environment setup information
 - Details and instructions on how to use this repo and codes 
-- Supplementary document (PDF) with additional results, details, and hyperparameter information
 - Data information
-- Citation and license information
+
 
 ## Environment Setup
 
@@ -203,52 +194,6 @@ For the DomainNet TEST set, use DomainNet_test.xlsx to reconstruct the following
 
 Where in each domain folder there will be 345 class folders with respective images in each of these 345 folders. 
 
-## Citation
-
-Our paper citation for "An Empirical Study of Domain Adaptation: Are We Really Learning Transferable Representations?":
-
-Link to paper: https://ieeexplore.ieee.org/abstract/document/10020767 
-
-```latex
-@INPROCEEDINGS{10020767,
-  author={Josselyn, Nicholas and Yin, Biao and Zhang, Ziming and Rundensteiner, Elke},
-  booktitle={2022 IEEE International Conference on Big Data (Big Data)}, 
-  title={An Empirical Study of Domain Adaptation: Are We Really Learning Transferable Representations?}, 
-  year={2022},
-  volume={},
-  number={},
-  pages={5504-5513},
-  doi={10.1109/BigData55660.2022.10020767}}
-  ```
-
-
-Additional applied domain adaptation paper using this repo published in 2022 IEEE ICMLA:
-
-Link to ICMLA paper: https://ieeexplore.ieee.org/abstract/document/10069858 
-
-Link to WPI-ARL collaborative webpage: https://arl.wpi.edu/
-
-Find indoor corrosion data here: https://arl.wpi.edu/corrosion_dataset#corrosionDatasetID
-
-Find outdoor corrosion data here: _pending release_
-
-Nicholas Josselyn, Biao Yin, Thomas Considine, John Kelley, Berend Rinderspacher, Robert Jensen, James Snyder, Ziming Zhang, and Elke Rundensteiner. 
-"Transferring indoor corrosion image assessment models to outdoor images via domain adaptation". In 
-21st IEEE International Conference on Machine Learning and Applications (ICMLA), 2022.
-
-BibTex citation for our additional ICMLA applied paper:
-
-```latex
-@inproceedings{josselyn2022transferring,
-  title={Transferring Indoor Corrosion Image Assessment Models to Outdoor Images via Domain Adaptation},
-  author={Josselyn, Nicholas and Yin, Biao and Considine, Thomas and Kelley, John and Rinderspacher, Berend and Jensen, Robert and Snyder, James and Zhang, Ziming and Rundensteiner, Elke},
-  booktitle={2022 21st IEEE International Conference on Machine Learning and Applications (ICMLA)},
-  pages={1386--1391},
-  year={2022},
-  organization={IEEE}
-}
-```
-
 
 This repository is adapted and modified from the below work. Please cite their work in addition to ours if you use this repository.
 
@@ -271,7 +216,7 @@ See license file
 
 MIT License
 
-Copyright (c) 2022 Nicholas Josselyn
+Copyright (c) 2022 xxxx xxxxxx
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
