@@ -8,6 +8,7 @@ import os
 import csv
 import pandas as pd
 import os.path as osp
+import numpy as np
 
 start_time = time.time()
 
@@ -141,7 +142,10 @@ def main(args: argparse.Namespace):
         task_target_test = args.target
 
         # path_test = root_dir + "test/" + task_target_test
+
         path_test = '../../../../../../copy_DomainNet_all_correct/DomainNet/cross_val_folds/' + "test/" + task_target_test
+        #path_test = '../../../../../../DomainNet_all_correct/DomainNet/cross_val_folds/fold_1/' + "train/" + task_target
+        #path_test = '/home/njjosselyn/ARL/domain_adaptation/DomainNet_all_correct/DomainNet_small/cross_val_folds/fold_1/train/' + task_target_test
 
         print("Path Test: ", path_test)
         test_dataset = datasets.ImageFolder(path_test, transform=val_transform)
@@ -156,6 +160,7 @@ def main(args: argparse.Namespace):
         print('OFFICE31')
         task_target_test = args.target
         path_test = '../../../../../../Office31/Original_images/cross_val_folds/' + "test/" + task_target_test + "/images"
+        #path_test = '../../../../../../Office31/Original_images/cross_val_folds/fold_1/train/' + task_target + '/images'
         # if task_target_test == "amazon" or task_target_test == "dslr" or task_target_test == "webcam":
         #     path_test = root_dir + "test/" + task_target_test + "/images"
         # else:
@@ -222,7 +227,84 @@ def main(args: argparse.Namespace):
         return
 
     if args.phase == 'test':
-        acc1, loss_val = validate(test_loader, classifier, args)
+        #classifier.load_state_dict(torch.load(logger.get_checkpoint_path('best')))
+        classifier.load_state_dict(torch.load(logger.get_checkpoint_path('best'))) # use best for DomainNet, 'latest' for ARL data
+        acc1, loss_val, gt, pred, outputs, feat_list = validate(test_loader, classifier, args, phase_state=True)
+        # print()
+        # print(dir(test_loader))
+        # print(test_loader.__gt__)
+        # print(test_loader.dataset)
+        # print(test_loader.sampler)
+        # print(dir(test_loader.sampler))
+        # print()
+        # print(test_loader.sampler.data_source)
+        # print(dir(test_loader.sampler.data_source))
+        # print()
+        # print("IMAGES")
+        # print(test_loader.sampler.data_source.imgs)
+        # print(len(test_loader.sampler.data_source.imgs))
+        # print()
+        # print('length testloader', len(test_loader))
+        # print('pred', pred.tolist())
+        # print('gt', gt.tolist())
+
+        # np.save(args.log + '/' + 'feature_list.npy', feat_list)
+        np.save('feature_lists/dataset/' + 'CDAN/' + str(args.source) + '_' + str(args.target) + '_' + str(args.log[-1]) + '_feature_list.npy', feat_list)
+
+        gt_list = gt.tolist()
+        pred_list = pred.tolist()
+        # gt_list_actual = []
+        # pred_list_actual = []
+        #
+        # for g in gt_list:
+        #     if g == 0:
+        #         gg = 5
+        #         gt_list_actual.append(gg)
+        #     elif g == 1:
+        #         gg = 6
+        #         gt_list_actual.append(gg)
+        #     elif g == 2:
+        #         gg = 7
+        #         gt_list_actual.append(gg)
+        #     elif g == 3:
+        #         gg = 8
+        #         gt_list_actual.append(gg)
+        #     elif g == 4:
+        #         gg = 9
+        #         gt_list_actual.append(gg)
+        #
+        # for p in pred_list:
+        #     if p == 0:
+        #         pp = 5
+        #         pred_list_actual.append(pp)
+        #     elif p == 1:
+        #         pp = 6
+        #         pred_list_actual.append(pp)
+        #     elif p == 2:
+        #         pp = 7
+        #         pred_list_actual.append(pp)
+        #     elif p == 3:
+        #         pp = 8
+        #         pred_list_actual.append(pp)
+        #     elif p == 4:
+        #         pp = 9
+        #         pred_list_actual.append(pp)
+        #
+        test_gt_pred = pd.DataFrame()
+        test_gt_pred['Image Name'] = pd.Series(test_loader.sampler.data_source.imgs)
+        #
+        test_gt_pred['Ignore_Ground Truth'] = pd.Series(gt_list)
+        test_gt_pred['Ignore_Predicted'] = pd.Series(pred_list)
+        #
+        # test_gt_pred['Ground Truth'] = pd.Series(gt_list_actual)
+        # test_gt_pred['Predicted'] = pd.Series(pred_list_actual)
+        # test_gt_pred['outputs'] = pd.Series(outputs.tolist())
+        # test_gt_pred['Accuracy'] = pd.Series(acc1)
+        # # test_gt_pred.to_csv(args.log + "/" + 'test_set_gt_pred_ratings.csv')
+        #test_gt_pred.to_csv(args.log + "/" + 'off31_test_set_gt_pred_ratings_2.csv')
+        test_gt_pred.to_csv(args.log + "/" + 'dataset_test_set_gt_pred.csv')
+
+        print()
         print(acc1)
         return
 
@@ -338,7 +420,7 @@ def train(train_source_iter: ForeverDataIterator, train_target_iter: ForeverData
     return losses.avg, trans_losses.avg, cls_losses.avg, cls_accs.avg, domain_accs.avg
 
 
-def validate(val_loader: DataLoader, model: ImageClassifier, args: argparse.Namespace) -> float:
+def validate(val_loader: DataLoader, model: ImageClassifier, args: argparse.Namespace, phase_state=False) -> float:
     batch_time = AverageMeter('Time', ':6.3f')
     losses = AverageMeter('Loss', ':.4e')
     top1 = AverageMeter('Acc@1', ':6.2f')
@@ -356,14 +438,28 @@ def validate(val_loader: DataLoader, model: ImageClassifier, args: argparse.Name
     else:
         confmat = None
 
+    feature_list = []  # add this to append all the fs
     with torch.no_grad():
         end = time.time()
+        targets = []
+        outputs = []
         for i, (images, target) in enumerate(val_loader):
             images = images.to(device)
             target = target.to(device)
 
             # compute output
-            output, _ = model(images)
+            output, feats = model(images)
+            feature_list.append(feats.to('cpu').detach().numpy())
+            outputs.append(output)
+            targets.append(target)
+            print(output.shape)
+            print(output.max())
+            print(output.min())
+            print('--------')
+            print(target.shape)
+            print(target.max())
+            print(target.min())
+
             loss = F.cross_entropy(output, target)
 
             # measure accuracy and record loss
@@ -385,6 +481,12 @@ def validate(val_loader: DataLoader, model: ImageClassifier, args: argparse.Name
               .format(top1=top1, top5=top5))
         if confmat:
             print(confmat.format(classes))
+
+    outputs = torch.cat(outputs)
+    targets = torch.cat(targets)
+
+    if phase_state:
+        return top1.avg, losses.avg, targets, outputs.argmax(1), outputs, np.concatenate(feature_list, axis=0) # return the features feature_list here
 
     return top1.avg, losses.avg
 
