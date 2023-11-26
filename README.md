@@ -46,7 +46,10 @@ At the bottom of each .py model file is a set of args that include all hyperpara
 
 ## Ensemble Model Codes and how to run
 
-Put here about all EBDA codes: single, multi ofr off31 + dnet. ensemble 5s, simplex
+Please note, file paths/directories will need to be updated based on your own local setup throughout these codes. 
+
+Please refer to the following link in necessary_files.zip to obtain the ground truth labels for each adaptation task used in each of these codes. Train data labels use -- "afn_subset_exps.csv", Test data labels use "gt_preds_each_da_model_approach1.csv"
+https://drive.google.com/drive/folders/1wqk3Ubmk-7_lSQYkbhmaIwNd2vsGWZOQ
 
 The EBDA ensemble model codes included in this repository can be found in Transfer-Learning-Library-master/Transfer-Learning-Library-master/examples/domain_adaptation/classification and are as follows:
 - model_build_1_layer.py
@@ -56,6 +59,8 @@ The EBDA ensemble model codes included in this repository can be found in Transf
 - model_build_1_layer_multi_src.py
 - model_build_1_layer_multi_src_off31.py
 - model_build_1_layer_SIMPLEX.py
+
+
 
 
 ## Analysis of results
