@@ -105,10 +105,6 @@ if non_neg == True:
 
 # Train Labels
 
-# task_csv_train = pd.read_csv(
-#         '/home/njjosselyn/ARL/domain_adaptation/JAN_CDAN/Transfer-Learning-Library-master/Transfer-Learning-Library-master/examples/domain_adaptation/classification/train_data_analysis/Ensemble_DomainNet/ORIGINAL_SPLIT/' + adapt_task + '/afn_subset_exps/' + 'afn_subset_exps.csv')  # NEED TO FIND PATH TO CORRECT TRAIN DATA LABELS, for 1 adapt task, the images are the same across each DA model so only need to load from 1 model and just chose afn to use
-    # print(task_csv)
-    # adapt_task + '/afn_subset_exps/' + 'afn_subset_exps.csv'
 
 parent_train_lbls = '/home/njjosselyn/ARL/domain_adaptation/JAN_CDAN/Transfer-Learning-Library-master/Transfer-Learning-Library-master/examples/domain_adaptation/classification/train_data_analysis/Ensemble_DomainNet/ORIGINAL_SPLIT/'
 task_csv_train_dict = {'c': parent_train_lbls + 'DomainNet_i2c' + '/afn_subset_exps/' + 'afn_subset_exps.csv',
@@ -118,7 +114,7 @@ task_csv_train_dict = {'c': parent_train_lbls + 'DomainNet_i2c' + '/afn_subset_e
                       'r': parent_train_lbls + 'DomainNet_i2r' + '/afn_subset_exps/' + 'afn_subset_exps.csv',
                       's': parent_train_lbls + 'DomainNet_i2s' + '/afn_subset_exps/' + 'afn_subset_exps.csv'}
 
-parent_train_lbls = '/home/njjosselyn/ARL/domain_adaptation/DomainNet_all_correct/DomainNet_small/'
+# parent_train_lbls = '/home/njjosselyn/ARL/domain_adaptation/DomainNet_all_correct/DomainNet_small/'
 # task_csv_train_dict = {'c': parent_train_lbls + 'c_DomainNet_small_labels.csv', 'i': parent_train_lbls + 'i_DomainNet_small_labels.csv', 'p': parent_train_lbls + 'p_DomainNet_small_labels.csv', 'q': parent_train_lbls + 'q_DomainNet_small_labels.csv', 'r': parent_train_lbls + 'r_DomainNet_small_labels.csv', 's': parent_train_lbls + 's_DomainNet_small_labels.csv'}
 
 
