@@ -48,18 +48,18 @@ At the bottom of each .py model file is a set of args that include all hyperpara
 
 Please note, file paths/directories will need to be updated based on your own local setup throughout these codes. 
 
-Please refer to the following link in necessary_files.zip to obtain the ground truth labels for each adaptation task used in each of these codes. Train data labels use -- "afn_subset_exps.csv", Test data labels use "gt_preds_each_da_model_approach1.csv"
+Please refer to the following link in necessary_files.zip to obtain the ground truth labels for each adaptation task used in each of these codes. Train data labels use: "afn_subset_exps.csv", Test data labels use: "gt_preds_each_da_model_approach1.csv"
 https://drive.google.com/drive/folders/1wqk3Ubmk-7_lSQYkbhmaIwNd2vsGWZOQ?usp=sharing
 
 The EBDA ensemble model codes included in this repository can be found in Transfer-Learning-Library-master/Transfer-Learning-Library-master/examples/domain_adaptation/classification and are as follows:
 - model_build_1_layer.py
+  - use this for...
 - model_build_1_layer_5DAs.py
 - model_build_1_layer_5folds.py
 - model_build_1_layer_off31.py
 - model_build_1_layer_multi_src.py
 - model_build_1_layer_multi_src_off31.py
 - model_build_1_layer_SIMPLEX.py
-
 
 
 
