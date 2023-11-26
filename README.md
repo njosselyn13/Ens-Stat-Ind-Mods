@@ -93,8 +93,7 @@ This download will contain all the raw data cross-val folds and test set for you
 
 To reconstruct the DomainNet datasets, first download the cleaned version of DomainNet data from the above link. Then look at our folder of excel files named "DomainNet_data". In this folder there are 31 excel files. 
 
-30 of the excel file names follow the structure: DomainNet_size_fold_x_split.xlsx 
-Size is either full, subset_50, or subset_20. 
+30 of the excel file names follow the structure: DomainNet_full_fold_x_split.xlsx 
 x is either 1, 2, 3, 4, 5 for each of the 5 folds.
 Split is either train or val.
 
