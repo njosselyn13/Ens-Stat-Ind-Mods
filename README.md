@@ -44,7 +44,7 @@ Also refer to original code repository cited at bottom for more information on h
 
 At the bottom of each .py model file is a set of args that include all hyperparameters you can tune. Refer to the supplementary PDF for final hyperparameters determined in our work. And see sample_run.txt for how to set these values when running experiments. 
 
-## Ensemble Model Codes and how to run
+## Ensemble Model Codes 
 
 Please note, file paths/directories will need to be updated based on your own local setup throughout these codes. 
 
