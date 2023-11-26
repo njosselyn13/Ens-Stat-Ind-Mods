@@ -49,7 +49,7 @@ At the bottom of each .py model file is a set of args that include all hyperpara
 Please note, file paths/directories will need to be updated based on your own local setup throughout these codes. 
 
 Please refer to the following link in necessary_files.zip to obtain the ground truth labels for each adaptation task used in each of these codes. Train data labels use -- "afn_subset_exps.csv", Test data labels use "gt_preds_each_da_model_approach1.csv"
-https://drive.google.com/drive/folders/1wqk3Ubmk-7_lSQYkbhmaIwNd2vsGWZOQ
+https://drive.google.com/drive/folders/1wqk3Ubmk-7_lSQYkbhmaIwNd2vsGWZOQ?usp=drive_link
 
 The EBDA ensemble model codes included in this repository can be found in Transfer-Learning-Library-master/Transfer-Learning-Library-master/examples/domain_adaptation/classification and are as follows:
 - model_build_1_layer.py
@@ -95,7 +95,7 @@ tsne_ensemble_5s.py can be used to plot feature spaces of a subset of 5 classes 
 tsne_ensemble_our_model.py can be used to plot feature spaces of a subset of 5 classes for DomainNet for all 25 models as seen in the supplementary document.
 
 statistical_independence_test.py can be used to calculate the statistical dependency between all pairs of models for all data domains for DomainNet. Please refer to the link here for accessing data_pool_matrix.xlsx files in necessary_files.zip for each adaptation task.
-https://drive.google.com/drive/folders/1wqk3Ubmk-7_lSQYkbhmaIwNd2vsGWZOQ
+https://drive.google.com/drive/folders/1wqk3Ubmk-7_lSQYkbhmaIwNd2vsGWZOQ?usp=drive_link
 
 ## Saved models
 
