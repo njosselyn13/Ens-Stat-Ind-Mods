@@ -91,13 +91,13 @@ For Office-31 data, please see the Google drive link here for all raw data (~1GB
 This download will contain all the raw data cross-val folds and test set for you already. No need to reconstruct. 
 
 
-To reconstruct the DomainNet datasets, first download the cleaned version of DomainNet data from the above link. Then look at our folder of excel files named "DomainNet_data". In this folder there are 31 excel files. 
+To reconstruct the DomainNet datasets, first download the cleaned version of DomainNet data from the above link. Then look at our folder of excel files named "DomainNet_data". In this folder there are 11 excel files. 
 
-30 of the excel file names follow the structure: DomainNet_full_fold_x_split.xlsx 
+0 of the excel file names follow the structure: DomainNet_full_fold_x_split.xlsx 
 x is either 1, 2, 3, 4, 5 for each of the 5 folds.
 Split is either train or val.
 
-The 31st file is for the TEST set of DomainNet data: DomainNet_test.xlsx
+The 11th file is for the TEST set of DomainNet data: DomainNet_test.xlsx
 
 Reconstruct the following folder structure: 
 - full
@@ -177,7 +177,7 @@ Reconstruct the following folder structure:
       - real
       - sketch
 
-Repeat this for not just "full", but also for "subset_50" and "subset_20" and put all 3 of these parent folders into one folder named DomainNet (or whatever you'd like to call it). In each domain folder (clipart, infograph, painting, quickdraw, real, and sketch) there will be 345 folders for each class with each of their respective images in these folders.
+In each domain folder (clipart, infograph, painting, quickdraw, real, and sketch) there will be 345 folders for each class with each of their respective images in these folders.
 
 In each of the excel files provided, there are 6 sheets corresponding to each of the 6 domains. In each sheet there are 345 columns corresponding to each of the 345 classes. For each class the list of image names are provided. Using the excel file name, sheet names, column names, and image file names you should be able to reconstruct the above folder structures. 
 
