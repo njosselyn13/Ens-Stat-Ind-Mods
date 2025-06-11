@@ -215,7 +215,9 @@ for adapt_task in adapt_tasks:
         models_concat = []
         gauss_dict = {}
 
-        models = ['feature_lists/dataset/DANN/', 'feature_lists/dataset/JAN/', 'feature_lists/dataset/CDAN/', 'feature_lists/dataset/AFN/', 'feature_lists/dataset/MCC/']
+        # models = ['feature_lists/dataset/DANN/', 'feature_lists/dataset/JAN/', 'feature_lists/dataset/CDAN/', 'feature_lists/dataset/AFN/', 'feature_lists/dataset/MCC/']
+        models = ['feature_lists/DANN/', 'feature_lists/JAN/', 'feature_lists/CDAN/',
+                  'feature_lists/AFN/', 'feature_lists/MCC/']
 
         for m in models:
             print(m)
