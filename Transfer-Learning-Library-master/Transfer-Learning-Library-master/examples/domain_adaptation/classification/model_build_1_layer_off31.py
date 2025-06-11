@@ -18,7 +18,12 @@ import argparse
 parser = argparse.ArgumentParser(description='Ensemble Code')
 parser.add_argument('--lr', '--learning-rate', default=0.001, type=float)
 parser.add_argument('--w', default=False, type=bool) #, action='store_true'
+parser.add_argument('--pseudo', default='domainnet_single_pseudo_labels_using_conf_score_train_fold1_data.csv', type=str)
+parser.add_argument('--psty', default='conf', type=str)
 args = parser.parse_args()
+
+pseudo_train_file = args.pseudo
+pseudo_type = args.psty
 
 
 parent_dir = '/home/njjosselyn/ARL/domain_adaptation/JAN_CDAN/Transfer-Learning-Library-master/Transfer-Learning-Library-master/examples/domain_adaptation/classification/Ensemble_DA_conf/mean_stdev_mode/Ensemble_DomainNet/ORIGINAL_SPLIT/'
@@ -59,9 +64,11 @@ if learning_rate == 0.01:
 elif learning_rate == 0.001:
     lr_str = '1e3'
 
-file_save = 'Office31_' + 'Gaussian_' + str(gaussian_projecting) + '_Feat_' + str(feat_extract_exps) + '_SOFTMAX_' + str(sftmx) + '_stacked_linear_1layer_lr' + lr_str + '_epochs' + str(num_epochs)
+# file_save = 'Office31_' + 'Gaussian_' + str(gaussian_projecting) + '_Feat_' + str(feat_extract_exps) + '_SOFTMAX_' + str(sftmx) + '_stacked_linear_1layer_lr' + lr_str + '_epochs' + str(num_epochs)
+file_save = 'pseudo_off31_single_src_' + pseudo_type + '_' + str(gaussian_projecting) + '_Feat_' + str(feat_extract_exps) + '_SOFTMAX_' + str(sftmx) + '_stacked_linear_1layer_lr' + lr_str + '_epochs' + str(num_epochs)
 
-folder_save_name = parent_dir + file_save
+# folder_save_name = parent_dir + file_save
+folder_save_name = 'pseudolabel_exps/off31/single/' + file_save
 if not os.path.isdir(folder_save_name):
     os.makedirs(folder_save_name)
 
@@ -232,20 +239,38 @@ for adapt_task in adapt_tasks:
     # task_csv_train = pd.read_csv(parent_dir + adapt_task + '/' + 'gt_preds_each_da_model_approach1.csv') # THIS IS TEST DATA, just for debugging
 
     # adapt_tasks = ['a2d', 'a2w', 'd2a', 'd2w', 'w2a', 'w2d']
-    if adapt_task == 'd2a' or adapt_task == 'w2a':
-        adt = 'amazon'
-    elif adapt_task == 'a2d' or adapt_task == 'w2d':
-        adt = 'dslr'
-    elif adapt_task == 'a2w' or adapt_task == 'd2w':
-        adt = 'webcam'
-    task_csv_train = pd.read_csv(
-        '/home/njjosselyn/ARL/domain_adaptation/JAN_CDAN/Transfer-Learning-Library-master/Transfer-Learning-Library-master/examples/domain_adaptation/classification/off31_gt_target_labels/' + 'off31_train_set_gt_pred_ratings_' + adt + '.csv')  # NEED TO FIND PATH TO CORRECT TRAIN DATA LABELS, for 1 adapt task, the images are the same across each DA model so only need to load from 1 model and just chose afn to use
-    # print(task_csv)
+    # if adapt_task == 'd2a' or adapt_task == 'w2a':
+    #     adt = 'amazon'
+    # elif adapt_task == 'a2d' or adapt_task == 'w2d':
+    #     adt = 'dslr'
+    # elif adapt_task == 'a2w' or adapt_task == 'd2w':
+    #     adt = 'webcam'
 
-    image_names = task_csv_train['Image Name'].dropna().tolist()
-    # print(image_names)
-    print('Number images:', len(image_names))
-    image_gt_labels = task_csv_train['Ignore_Ground Truth'].dropna().tolist()
+    if adapt_task == 'd2a':
+        adt = 'Office31_d2a'
+    elif adapt_task == 'w2a':
+        adt = 'Office31_w2a'
+    elif adapt_task == 'a2d':
+        adt = 'Office31_a2d'
+    elif adapt_task == 'w2d':
+        adt = 'Office31_w2d'
+    elif adapt_task == 'a2w':
+        adt = 'Office31_a2w'
+    elif adapt_task == 'd2w':
+        adt = 'Office31_d2w'
+
+
+    # task_csv_train = pd.read_csv(
+    #     '/home/njjosselyn/ARL/domain_adaptation/JAN_CDAN/Transfer-Learning-Library-master/Transfer-Learning-Library-master/examples/domain_adaptation/classification/off31_gt_target_labels/' + 'off31_train_set_gt_pred_ratings_' + adt + '.csv')  # NEED TO FIND PATH TO CORRECT TRAIN DATA LABELS, for 1 adapt task, the images are the same across each DA model so only need to load from 1 model and just chose afn to use
+    # # print(task_csv)
+
+    task_csv_train = pd.read_csv('/home/njjosselyn/ARL/domain_adaptation/JAN_CDAN/Transfer-Learning-Library-master/Transfer-Learning-Library-master/examples/domain_adaptation/classification/off31_eval_models/train_fold1_data/' + pseudo_train_file)
+
+    # image_names = task_csv_train['Image Name'].dropna().tolist()
+    # # print(image_names)
+    # print('Number images:', len(image_names))
+    # image_gt_labels = task_csv_train['Ignore_Ground Truth'].dropna().tolist()
+    image_gt_labels = task_csv_train[adt].dropna().tolist()
     # print(image_gt_labels)
     # print(len(image_gt_labels))
     print()

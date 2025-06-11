@@ -18,8 +18,12 @@ import argparse
 parser = argparse.ArgumentParser(description='Ensemble Code')
 parser.add_argument('--lr', '--learning-rate', default=0.001, type=float)
 parser.add_argument('--w', default=False, type=bool) #, action='store_true'
+parser.add_argument('--pseudo', default='domainnet_single_pseudo_labels_using_conf_score_train_data_analysis.csv', type=str)
+parser.add_argument('--psty', default='conf', type=str)
 args = parser.parse_args()
 
+pseudo_train_file = args.pseudo
+pseudo_type = args.psty
 
 parent_dir = '/home/njjosselyn/ARL/domain_adaptation/JAN_CDAN/Transfer-Learning-Library-master/Transfer-Learning-Library-master/examples/domain_adaptation/classification/Ensemble_DA_conf/mean_stdev_mode/Ensemble_DomainNet/ORIGINAL_SPLIT/'
 
@@ -79,9 +83,11 @@ if learning_rate == 0.01:
 elif learning_rate == 0.001:
     lr_str = '1e3'
 
-file_save = 'small_dnet_Gaussian_' + str(gaussian_projecting) + '_Feat_' + str(feat_extract_exps) + '_SOFTMAX_' + str(sftmx) + '_stacked_linear_1layer_lr' + lr_str + '_epochs' + str(num_epochs) + '_weights_' + str(non_neg)
+# file_save = 'small_dnet_Gaussian_' + str(gaussian_projecting) + '_Feat_' + str(feat_extract_exps) + '_SOFTMAX_' + str(sftmx) + '_stacked_linear_1layer_lr' + lr_str + '_epochs' + str(num_epochs) + '_weights_' + str(non_neg)
+file_save = 'pseudo_dnet_single_src_' + pseudo_type + '_' + str(gaussian_projecting) + '_Feat_' + str(feat_extract_exps) + '_SOFTMAX_' + str(sftmx) + '_stacked_linear_1layer_lr' + lr_str + '_epochs' + str(num_epochs) + '_weights_' + str(non_neg)
 
-folder_save_name = parent_dir + file_save
+# folder_save_name = parent_dir + file_save
+folder_save_name = 'pseudolabel_exps/dnet/single/' + file_save
 if not os.path.isdir(folder_save_name):
     os.makedirs(folder_save_name)
 
@@ -253,18 +259,22 @@ for adapt_task in adapt_tasks:
         data_npy_train = np.load(parent_dir + adapt_task + '/' + adapt_task + '_train_set.npy')
     print(data_npy_train.shape)
     print()
+
+
     # task_csv_train = pd.read_csv(parent_dir + adapt_task + '/' + 'gt_preds_each_da_model_approach1.csv') # THIS IS TEST DATA, just for debugging
-    task_csv_train = pd.read_csv(
-       '/home/njjosselyn/ARL/domain_adaptation/JAN_CDAN/Transfer-Learning-Library-master/Transfer-Learning-Library-master/examples/domain_adaptation/classification/train_data_analysis/Ensemble_DomainNet/ORIGINAL_SPLIT/' + adapt_task + '/afn_subset_exps/' + 'afn_subset_exps.csv')  # NEED TO FIND PATH TO CORRECT TRAIN DATA LABELS, for 1 adapt task, the images are the same across each DA model so only need to load from 1 model and just chose afn to use
+    # task_csv_train = pd.read_csv(
+    #    '/home/njjosselyn/ARL/domain_adaptation/JAN_CDAN/Transfer-Learning-Library-master/Transfer-Learning-Library-master/examples/domain_adaptation/classification/train_data_analysis/Ensemble_DomainNet/ORIGINAL_SPLIT/' + adapt_task + '/afn_subset_exps/' + 'afn_subset_exps.csv')  # NEED TO FIND PATH TO CORRECT TRAIN DATA LABELS, for 1 adapt task, the images are the same across each DA model so only need to load from 1 model and just chose afn to use
     # print(task_csv)
+    task_csv_train = pd.read_csv('/home/njjosselyn/ARL/domain_adaptation/JAN_CDAN/Transfer-Learning-Library-master/Transfer-Learning-Library-master/examples/domain_adaptation/classification/train_data_analysis/Ensemble_DomainNet/ORIGINAL_SPLIT/' + pseudo_train_file)
 
     # tgtd = adapt_task[-1]
     # task_csv_train = pd.read_csv('/home/njjosselyn/ARL/domain_adaptation/DomainNet_all_correct/DomainNet_small/' + tgtd + '_DomainNet_small_labels.csv')
 
-    image_names = task_csv_train['Image_Name'].dropna().tolist()
+    # image_names = task_csv_train['Image_Name'].dropna().tolist()
     # print(image_names)
-    print('Number images:', len(image_names))
-    image_gt_labels = task_csv_train['Ground_Truth'].dropna().tolist()
+    # print('Number images:', len(image_names))
+    # image_gt_labels = task_csv_train['Ground_Truth'].dropna().tolist()
+    image_gt_labels = task_csv_train[adapt_task].dropna().tolist()
     # print(image_gt_labels)
     # print(len(image_gt_labels))
     print()

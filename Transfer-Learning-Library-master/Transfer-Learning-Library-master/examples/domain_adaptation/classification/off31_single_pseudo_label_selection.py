@@ -15,16 +15,11 @@ from sklearn.metrics import accuracy_score, f1_score, balanced_accuracy_score
 
 # parent_dir = 'C:\\Users\\Nick\\Desktop\\WPI\\ARL\\Domain_Adaptation\\Codes\\Results\\ARL_DA\\journal_extension\\DA_models\\necessary_files\\'
 
-train_or_test = 'train_data_analysis'
+train_or_test = 'test_data' # train_fold1_data or test_data
 
-parent_dir = '/home/njjosselyn/ARL/domain_adaptation/JAN_CDAN/Transfer-Learning-Library-master/Transfer-Learning-Library-master/examples/domain_adaptation/classification/' + train_or_test + '/Ensemble_DomainNet/ORIGINAL_SPLIT/'
+parent_dir = '/home/njjosselyn/ARL/domain_adaptation/JAN_CDAN/Transfer-Learning-Library-master/Transfer-Learning-Library-master/examples/domain_adaptation/classification/off31_eval_models/' + train_or_test + '/'
 
-adapt_tasks = ['DomainNet_c2i', 'DomainNet_c2p', 'DomainNet_c2q', 'DomainNet_c2r', 'DomainNet_c2s',
-              'DomainNet_i2c', 'DomainNet_i2p', 'DomainNet_i2q', 'DomainNet_i2r', 'DomainNet_i2s',
-              'DomainNet_p2c', 'DomainNet_p2i','DomainNet_p2q', 'DomainNet_p2r', 'DomainNet_p2s',
-              'DomainNet_q2c', 'DomainNet_q2i','DomainNet_q2p','DomainNet_q2r', 'DomainNet_q2s',
-              'DomainNet_r2c', 'DomainNet_r2i','DomainNet_r2p', 'DomainNet_r2q', 'DomainNet_r2s',
-              'DomainNet_s2c', 'DomainNet_s2i','DomainNet_s2p', 'DomainNet_s2q', 'DomainNet_s2r']
+adapt_tasks = ['Office31_a2d', 'Office31_a2w', 'Office31_d2w', 'Office31_d2a', 'Office31_w2a', 'Office31_w2d']
 
 # adapt_tasks = ['DomainNet_i2c']
 
@@ -52,14 +47,14 @@ for adapt_task in adapt_tasks:
     print(adapt_task)
     data_pool_pth = parent_dir + adapt_task + '/' + data_pool_excel_file
 
-    data_pool_dann_ = pd.read_excel(data_pool_pth, sheet_name='dann_subset_exps', index_col=0)
-    data_pool_jan_ = pd.read_excel(data_pool_pth, sheet_name='jan_subset_exps', index_col=0)
-    data_pool_cdan_ = pd.read_excel(data_pool_pth, sheet_name='cdan_subset_exps', index_col=0)
-    data_pool_afn_ = pd.read_excel(data_pool_pth, sheet_name='afn_subset_exps', index_col=0)
-    data_pool_mcc_ = pd.read_excel(data_pool_pth, sheet_name='mcc_subset_exps', index_col=0)
+    data_pool_dann_ = pd.read_excel(data_pool_pth, sheet_name='dann_subset_exps') #, index_col=0)
+    data_pool_jan_ = pd.read_excel(data_pool_pth, sheet_name='jan_subset_exps') #, index_col=0)
+    data_pool_cdan_ = pd.read_excel(data_pool_pth, sheet_name='cdan_subset_exps') #, index_col=0)
+    data_pool_afn_ = pd.read_excel(data_pool_pth, sheet_name='afn_subset_exps') #, index_col=0)
+    data_pool_mcc_ = pd.read_excel(data_pool_pth, sheet_name='mcc_subset_exps') #, index_col=0)
 
     gt_label_ = data_pool_dann_['GT Number'].dropna().tolist()
-    gt_name = data_pool_dann_['Image Names'].dropna().tolist()
+    # gt_name = data_pool_dann_['Image Names'].dropna().tolist()
 
     gt_label = list(map(int, gt_label_))
 
@@ -280,54 +275,10 @@ df_gt = pd.DataFrame(zl_gt, columns=gt_tasks.keys())
 # print()
 
 # saving files
-df_pseudo.to_csv(parent_dir + 'domainnet_single_pseudo_labels_using_conf_score_' + train_or_test + '.csv')
-df_gt.to_csv(parent_dir + 'domainnet_single_gt_labels_' + train_or_test + '.csv')
+df_pseudo.to_csv(parent_dir + 'off31_single_pseudo_labels_using_conf_score_' + train_or_test + '.csv')
+df_gt.to_csv(parent_dir + 'off31_single_gt_labels_' + train_or_test + '.csv')
 
-df_pseudo_mode.to_csv(parent_dir + 'domainnet_single_pseudo_labels_using_mode_' + train_or_test + '.csv')
-
-
+df_pseudo_mode.to_csv(parent_dir + 'off31_single_pseudo_labels_using_mode_' + train_or_test + '.csv')
 
 
 
-
-
-
-
-######################################################################
-######################################################################
-######################################################################
-######################################################################
-######################################################################
-
-
-    # max_pred = data_pool_all_preds[[max_conf_idx]]
-    # print(max_pred)
-    # print(len(max_pred))
-
-
-
-    # loop row by row through conf score df, get (row, col) indices for highest conf score
-    # get the model and fold number (the col name)
-    # get pred value for same (row, col) value in pred df
-
-
-
-    # print(data_pool_dann_)
-    # print()
-
-    # print(data_pool_dann_preds)
-    # print(type(data_pool_dann_preds))
-    # print()
-    # print(data_pool_dann_conf)
-    # print()
-
-    # for row in data_pool_dann_preds.rows:
-    #     print(row)
-    #     print(type(row))
-
-    # append each of the 5 df side by side
-    # get each column name as a key, the list of column values as values in dictionary
-
-
-# put all 25 models together to compare all against each other
-    # then do similar selection as done in other ensemble code to pick the pred corresponding to highest conf score
