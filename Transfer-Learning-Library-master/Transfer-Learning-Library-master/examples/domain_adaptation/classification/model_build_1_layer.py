@@ -161,7 +161,10 @@ for adapt_task in adapt_tasks:
                  'real_clipart', 'real_infograph', 'real_painting', 'real_quickdraw', 'real_sketch',
                  'sketch_clipart', 'sketch_infograph', 'sketch_painting', 'sketch_quickdraw', 'sketch_real']
 
-        models = ['feature_lists/dataset/DANN/', 'feature_lists/dataset/JAN/', 'feature_lists/dataset/CDAN/', 'feature_lists/dataset/AFN/', 'feature_lists/dataset/MCC/']
+        # models = ['feature_lists/dataset/DANN/', 'feature_lists/dataset/JAN/', 'feature_lists/dataset/CDAN/', 'feature_lists/dataset/AFN/', 'feature_lists/dataset/MCC/']
+        models = ['feature_lists/DANN/', 'feature_lists/JAN/', 'feature_lists/CDAN/',
+                  'feature_lists/AFN/', 'feature_lists/MCC/']
+
         print(tasks[task_counter])
         models_concat = []
         gauss_dict = {}
