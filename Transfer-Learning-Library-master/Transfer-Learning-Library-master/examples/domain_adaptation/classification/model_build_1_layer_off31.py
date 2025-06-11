@@ -4,7 +4,7 @@ import numpy as np
 from sklearn.metrics import accuracy_score, f1_score, balanced_accuracy_score
 from sklearn import random_projection
 import shutil
-from statistics import mode, mean, stdev, multimode, median, median_high, median_low
+from statistics import mode, mean
 from matplotlib import pyplot as plt
 import math
 import torch
