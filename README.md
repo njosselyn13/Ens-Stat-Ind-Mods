@@ -57,6 +57,8 @@ https://drive.google.com/drive/folders/1wqk3Ubmk-7_lSQYkbhmaIwNd2vsGWZOQ?usp=sha
 
 For pseudolabels used, see pseudolabels folder. 
 
+See sample_ebda_off31.sh for a sample run script of EBDA for Office31 and sample_ebda_dnet.sh for a sample run script of EBDA for DomainNet.
+
 The EBDA ensemble model codes included in this repository can be found in Transfer-Learning-Library-master/Transfer-Learning-Library-master/examples/domain_adaptation/classification and are as follows:
 - model_build_1_layer.py
   - Use this for training single-source DomainNet EBDA experiments
