@@ -55,6 +55,8 @@ Please note, file paths/directories will need to be updated based on your own lo
 Please refer to the following link in necessary_files.zip to obtain the ground truth labels for each adaptation task used in each of these codes. Train data labels use: "afn_subset_exps.csv", Test data labels use: "gt_preds_each_da_model_approach1.csv"
 https://drive.google.com/drive/folders/1wqk3Ubmk-7_lSQYkbhmaIwNd2vsGWZOQ?usp=sharing
 
+For pseudolabels used, see pseudolabels folder. 
+
 The EBDA ensemble model codes included in this repository can be found in Transfer-Learning-Library-master/Transfer-Learning-Library-master/examples/domain_adaptation/classification and are as follows:
 - model_build_1_layer.py
   - Use this for training single-source DomainNet EBDA experiments
