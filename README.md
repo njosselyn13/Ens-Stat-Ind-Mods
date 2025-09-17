@@ -54,19 +54,22 @@ https://drive.google.com/drive/folders/1wqk3Ubmk-7_lSQYkbhmaIwNd2vsGWZOQ?usp=sha
 The EBDA ensemble model codes included in this repository can be found in Transfer-Learning-Library-master/Transfer-Learning-Library-master/examples/domain_adaptation/classification and are as follows:
 - model_build_1_layer.py
   - Use this for training single-source DomainNet EBDA experiments
+<!--
 [//]: # - model_build_1_layer_5DAs.py
 [//]: #  - Use this for training single-source DomainNet EBDA of 5 DA models on fold 1 experiments
 [//]: # - model_build_1_layer_5folds.py
 [//]: #  - Use this for training single-source DomainNet EBDA of 5 fold models on DANN model experiments
+-->
 - model_build_1_layer_off31.py
   - Use this for training single-source Office-31 EBDA experiments
+<!--
 [//]: # - model_build_1_layer_multi_src.py
 [//]: #  - Use this for training multi-source DomainNet EBDA experiments
 [//]: # - model_build_1_layer_multi_src_off31.py
 [//]: #  - Use this for training multi-source Office-31 EBDA experiments
 [//]: # - model_build_1_layer_SIMPLEX.py
 [//]: #  - Use this for training DomainNet EBDA experiments with regularization (simplex) as shown in the supplementary material
-
+-->
 
 ## Analysis of results
 
