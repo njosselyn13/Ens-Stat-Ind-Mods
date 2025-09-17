@@ -1,4 +1,8 @@
-# Ensembles of Statistically Independent Models: An Embarrassingly Simple yet Strong Method for Domain Adaptation
+# Ensembles of Statistically Independent Models: A Method for Semi-Supervised Domain Adaptation
+
+Nicholas Josselyn, Walter Gerych, Biao Yin, Ziming Zhang, Elke Rundensteiner
+
+Published in ICMLA 2025 Special Session on Deep Learning and Applications
 
 ## Introduction 
 
