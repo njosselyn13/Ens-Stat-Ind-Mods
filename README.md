@@ -106,9 +106,9 @@ Then, set up remote connection (if using a remote compute cluster) by entering y
 
 tsne_ensemble.py can be used to generate feature spaces for all 25 individual DA models individually and together and for all 5 DA models for 1 fold of data and for all 5 folds for 1 DA model as seen in the main paper.
 
-tsne_ensemble_5s.py can be used to plot feature spaces of a subset of 5 classes for DomainNet for all 5 DA models for 1 fold of data and for all 5 folds for 1 DA model as seen in the supplementary document.
+tsne_ensemble_5s.py can be used to plot feature spaces of a subset of 5 classes for DomainNet for all 5 DA models for 1 fold of data and for all 5 folds for 1 DA model.
 
-tsne_ensemble_our_model.py can be used to plot feature spaces of a subset of 5 classes for DomainNet for all 25 models as seen in the supplementary document.
+tsne_ensemble_our_model.py can be used to plot feature spaces of a subset of 5 classes for DomainNet for all 25 models.
 
 statistical_independence_test.py can be used to calculate the statistical dependency between all pairs of models for all data domains for DomainNet. Please refer to the link here for accessing data_pool_matrix.xlsx files in necessary_files.zip for each adaptation task.
 https://drive.google.com/drive/folders/1wqk3Ubmk-7_lSQYkbhmaIwNd2vsGWZOQ?usp=sharing
